@@ -42,6 +42,36 @@
     <link rel="stylesheet" href="/css/tailwind.css" />
     <link rel="stylesheet" href="/css/highlight.css" />
     <link rel="stylesheet" href="/css/toc.css" />
+    <link
+  rel="alternate"
+  type="application/rss+xml"
+  title=" RSS"
+  href="/rss.xml"
+/>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="/js/search.js"></script>
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const menuToggle = document.getElementById("menu-toggle");
+    const mobileMenu = document.getElementById("mobile-menu");
+    if (menuToggle && mobileMenu) {
+      menuToggle.addEventListener("click", () => {
+        if (mobileMenu.classList.contains("hidden")) {
+          mobileMenu.classList.remove("hidden");
+        } else {
+          mobileMenu.classList.add("hidden");
+        }
+      });
+    }
+  });
+</script>
+
+  <meta name="generator" content="Hexo 7.3.0"></head>
+  <body
+    class="bg-black text-hacker-color3 container mx-auto"
+    style="overflow-x: hidden"
+  >
     <header class="bg-black text-hacker-white py-4 font-dos font-extrabold">
   <div class="container mx-auto flex items-center justify-between space-x-8">
     <h1
@@ -52,7 +82,6 @@
       </a>
     </h1>
 
-    <!-- 大屏幕 -->
     <nav class="hidden md:block">
       <ul class="flex space-x-6">
         
@@ -113,7 +142,6 @@
       </ul>
     </nav>
 
-    <!-- 小屏幕 -->
     <button
       id="menu-toggle"
       class="block md:hidden text-white focus:outline-none"
@@ -135,7 +163,6 @@
     </button>
   </div>
 
-  <!-- 折叠菜单 -->
   <nav id="mobile-menu" class="hidden bg-black">
     <ul class="space-y-2 py-4 px-6">
       
@@ -195,38 +222,8 @@
       
     </ul>
   </nav>
-
-  <!-- RSS Link -->
-  <link
-    rel="alternate"
-    type="application/rss+xml"
-    title=" RSS"
-    href="/rss.xml"
-  />
 </header>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js"></script>
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script src="/js/search.js"></script>
-<script>
-  document.addEventListener("DOMContentLoaded", () => {
-    const menuToggle = document.getElementById("menu-toggle");
-    const mobileMenu = document.getElementById("mobile-menu");
 
-    menuToggle.addEventListener("click", () => {
-      if (mobileMenu.classList.contains("hidden")) {
-        mobileMenu.classList.remove("hidden");
-      } else {
-        mobileMenu.classList.add("hidden");
-      }
-    });
-  });
-</script>
-
-  <meta name="generator" content="Hexo 7.3.0"></head>
-  <body
-    class="bg-black text-hacker-color3 container mx-auto"
-    style="overflow-x: hidden"
-  >
     <!-- 文章标题 -->
     <h1 class="text-5xl text-hacker-color1 font-bold font-dos my-6 text-center">
       Hello World
@@ -258,13 +255,6 @@
 <p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
 </div>
       
-      <div class="post-container">
-        <aside class="toc-container">
-          <button class="toc-toggle">文章目录</button>
-          <nav class="toc" id="toc"></nav>
-        </aside>
-      </div>
-      
     </div>
 
     <!-- 返回主页链接 -->
@@ -278,46 +268,27 @@
     <!-- 引入 TOC 逻辑 -->
 
     <footer class="bg-black text-gray-400 py-4">
-  <div class="container mx-auto text-center">
-    <p>
-      © <span id="current-year"></span> Luo Jiaheng <br />
-      Powered by
-      <a
-        class="hover:text-white duration-150 hover:underline decoration-slice"
-        target="_blank" rel="noopener" href="https://hexo.io/"
-        >Hexo</a
-      >
-      &
-      <a
-        class="hover:text-white duration-150 hover:underline decoration-slice"
-        target="_blank" rel="noopener" href="https://github.com/m310ct/hexo-theme-hexploit"
-        >Hexpolit</a
-      >
-    </p>
-  </div>
+ <div class="container mx-auto text-center">
+  <p>© <span id="current-year"></span>  Luo Jiaheng 
+    <br> Powered by <a class="hover:text-white duration-150 hover:underline decoration-slice" target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a> & <a class="hover:text-white duration-150 hover:underline decoration-slice" target="_blank" rel="noopener" href="https://github.com/m310ct/hexo-theme-hexploit">Hexpolit</a></p>
+ </div>
 </footer>
 
-<script>
-  document.getElementById("current-year").textContent =
-    new Date().getFullYear();
+<script> 
+ document.getElementById("current-year").textContent = new Date().getFullYear();
 </script>
 <script>
-  window.MathJax = {
-    tex: {
-      inlineMath: [
-        ["$", "$"],
-        ["\\(", "\\)"],
-      ], // 启用 $...$ 和 \( ... \)
-    },
-    svg: {
-      fontCache: "global",
-    },
-  };
+window.MathJax = {
+tex: {
+  inlineMath: [['$', '$'], ['\\(', '\\)']]  // 启用 $...$ 和 \( ... \)
+},
+svg: {
+  fontCache: 'global'
+}
+};
 </script>
-<script
-  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
-  async
-></script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" async></script>
+
 
   </body>
 </html>

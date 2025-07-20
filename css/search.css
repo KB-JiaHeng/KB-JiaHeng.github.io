@@ -40,6 +40,10 @@
     color: white;
   }
 
+  #search-input::-moz-placeholder {
+    color: #aaa; 
+  }
+
   #search-input::placeholder {
     color: #aaa; 
   }
