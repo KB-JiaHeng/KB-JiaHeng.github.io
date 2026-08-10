@@ -393,6 +393,44 @@ a {
 .work-venues a:hover {
   color: #fff;
 }
+.honor-year-group + .honor-year-group {
+  margin-top: 1.8rem;
+}
+.honor-year {
+  margin: 0 0 .55rem;
+  color: var(--jh-green);
+  font-family: DOSFont, monospace;
+  font-size: 1rem;
+  font-weight: 400;
+}
+.honors-list {
+  border-top: 1px solid rgba(20,83,45,.65);
+}
+.honor-row {
+  display: grid;
+  grid-template-columns: minmax(0,1fr) auto;
+  gap: 2rem;
+  align-items: baseline;
+  padding: .78rem .2rem;
+  border-bottom: 1px solid rgba(20,83,45,.65);
+}
+.honor-title {
+  min-width: 0;
+  color: #eeeeee;
+  text-decoration: none;
+  font-size: 1.04rem;
+  line-height: 1.45;
+}
+a.honor-title:hover {
+  color: var(--jh-green);
+}
+.honor-issuer {
+  color: #8f8f8f;
+  font-size: .92rem;
+  line-height: 1.45;
+  text-align: right;
+  white-space: nowrap;
+}
 .about-detail-page {
   max-width: 52rem;
   min-height: 75vh;
@@ -616,6 +654,14 @@ a {
   .timeline-row {
     grid-template-columns: 4.2rem minmax(0,1fr);
     gap: .8rem;
+  }
+  .honor-row {
+    grid-template-columns: 1fr;
+    gap: .18rem;
+  }
+  .honor-issuer {
+    text-align: left;
+    white-space: normal;
   }
   .post-page {
     padding-top: 2.25rem;
