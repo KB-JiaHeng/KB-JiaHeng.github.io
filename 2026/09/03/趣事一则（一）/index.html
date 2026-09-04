@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JiaHeng&#39;s Blog - 趣事一则（一）</title>
+    <link rel="stylesheet" href="/css/styles.css" />
+    <link rel="stylesheet" href="/css/tailwind.css" />
+    <link rel="stylesheet" href="/css/highlight.css" />
+    <script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const menuToggle = document.getElementById("menu-toggle");
+    const mobileMenu = document.getElementById("mobile-menu");
+    if (menuToggle && mobileMenu) {
+      menuToggle.addEventListener("click", () => mobileMenu.classList.toggle("hidden"));
+    }
+  });
+</script>
+
+    
+    <script>
+      window.MathJax = {
+        tex: { inlineMath: [['$', '$'], ['\\(', '\\)']] },
+      };
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" async></script>
+    
+  <meta name="generator" content="Hexo 7.3.0"></head>
+  <body class="bg-black post-body">
+    <header class="site-header font-dos">
+  <div class="site-header-inner">
+    <a href="/" class="site-title">JiaHeng&#39;s Blog</a>
+    <nav class="site-nav desktop-nav" aria-label="Primary navigation">
+      
+      <a href="/">Home</a>
+      
+      <a href="/writing/">Writing</a>
+      
+      <a href="/about/">About</a>
+      
+    </nav>
+    <button id="menu-toggle" class="menu-toggle" aria-label="Toggle navigation">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16"></path></svg>
+    </button>
+  </div>
+  <nav id="mobile-menu" class="mobile-nav hidden" aria-label="Mobile navigation">
+    <a href="/">Home</a><a href="/writing/">Writing</a><a href="/about/">About</a>
+  </nav>
+</header>
+
+
+    
+    
+
+    <main class="post-page">
+      <a class="post-back-link" href="/writing/">← Writing</a>
+
+      <header class="post-header">
+        <h1>趣事一则（一）</h1>
+        <div class="post-meta">
+          <time>2026-09-03</time>
+          <span class="post-meta-separator">/</span><span class="post-category">Thoughts</span>
+        </div>
+      </header>
+
+      <article id="article-content" class="post-content article-entry highlight">
+        <h2 id="缘起"><a href="#缘起" class="headerlink" title="缘起"></a>缘起</h2><p>今天做计算机网络课程的作业，要求用 <code>nc</code> 命令来访问一个网站。作业给的示例网站是 <code>www.example.com</code> ，自然地在 <code>HTTP</code> 请求里 <code>Host</code> 填写的就是 <code>example.com</code>。作业还另外要求自己找一个网站尝试。自然地，我选了自己的个人网站进行尝试</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash">$ nc kb-jiaheng.github.io 80<br></code></pre></td></tr></table></figure>
+<p>但是忘记修改 <code>Host</code> 字段的内容了，HTTP 请求写的是：</p>
+<figure class="highlight http"><table><tr><td class="code"><pre><code class="hljs http"><span class="hljs-keyword">GET</span> <span class="hljs-string">/</span> <span class="hljs-meta">HTTP/1.1</span><br><span class="hljs-attribute">Host</span><span class="hljs-punctuation">: </span>example.com<br><span class="hljs-attribute">Connection</span><span class="hljs-punctuation">: </span>close<br></code></pre></td></tr></table></figure>
+<p>结果意外的得到了一份时空漂流瓶：</p>
+<figure class="highlight http"><table><tr><td class="code"><pre><code class="hljs http"><span class="hljs-meta">HTTP/1.1</span> <span class="hljs-number">200</span> OK<br><span class="hljs-attribute">Connection</span><span class="hljs-punctuation">: </span>close<br><span class="hljs-attribute">Content-Length</span><span class="hljs-punctuation">: </span>8453<br><span class="hljs-attribute">Server</span><span class="hljs-punctuation">: </span>GitHub.com<br><span class="hljs-attribute">Content-Type</span><span class="hljs-punctuation">: </span>text/html; charset=utf-8<br><span class="hljs-attribute">Last-Modified</span><span class="hljs-punctuation">: </span>Thu, 24 Feb 2011 15:30:37 GMT<br></code></pre></td></tr></table></figure>
+<p>好家伙，挖掘到2011年的古坟了。想想当年，我也才只是伍岁小孩。紧接着是嵌有俄语的 HTML：</p>
+<details class="fold-code">
+<summary>完整的 2011 年 HTML 源码</summary>
+
+<figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs html"><span class="hljs-meta">&lt;!DOCTYPE <span class="hljs-keyword">HTML</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">html</span>&gt;</span><br>	<span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">title</span>&gt;</span>Мастер-Ф ремонт и строительные работы<span class="hljs-tag">&lt;/<span class="hljs-name">title</span>&gt;</span>         <br>        <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">http-equiv</span>=<span class="hljs-string">&quot;content-type&quot;</span> <span class="hljs-attr">content</span>=<span class="hljs-string">&quot;text/html;charset=UTF-8&quot;</span> /&gt;</span><br>        <br>        <span class="hljs-tag">&lt;<span class="hljs-name">link</span> <span class="hljs-attr">rel</span>=<span class="hljs-string">&quot;stylesheet&quot;</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text/css&quot;</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;http://yui.yahooapis.com/3.3.0/build/cssreset/reset-min.css&quot;</span>&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">link</span> <span class="hljs-attr">rel</span>=<span class="hljs-string">&quot;stylesheet&quot;</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;style.css&quot;</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text/css&quot;</span>&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">link</span> <span class="hljs-attr">rel</span>=<span class="hljs-string">&quot;stylesheet&quot;</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;nivo-slider.css&quot;</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text/css&quot;</span>&gt;</span><br><br>        <span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js&quot;</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text/javascript&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.10/jquery-ui.min.js&quot;</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text/javascript&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;jquery.nivo.slider.pack.js&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>	<br>	<span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span><br>	<span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span><br>		<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;wrapper&quot;</span>&gt;</span><br>			<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;content&quot;</span>&gt;</span><br>				<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;header&quot;</span>&gt;</span><br>					<span class="hljs-tag">&lt;<span class="hljs-name">h1</span>&gt;</span>Мастер-Ф<span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span><br>					<span class="hljs-tag">&lt;<span class="hljs-name">h2</span>&gt;</span>Строительные и отделочные работы<span class="hljs-tag">&lt;/<span class="hljs-name">h2</span>&gt;</span><br>					<span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;phone&quot;</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">style</span>=<span class="hljs-string">&quot;font-size: 0.8em;&quot;</span>&gt;</span>г. Тверь<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">br</span>/&gt;</span>+7 916 733 7450<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><br>                <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br>                <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;about&quot;</span>&gt;</span><br>                    <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Сегодня мы выполняем весь комплекс ремонтно-отделочных работ. Осуществляем отделку &quot;под ключ&quot; объектов жилищного, административно-торгового и общественного назначения.<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>                    <br>                    <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Наша фирма имеет несколько строительных бригад с богатым опытом работы. Средний стаж наших специалистов составляет 10 лет.<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br>                    <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Основной задачей нашего коллектива является творческий подход, высокий уровень организации работ и соответствие ГОСТам, СНиПам и стандартам качества строительных работ.<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br>				<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br>                <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;clients&quot;</span>&gt;</span><br>                    <span class="hljs-tag">&lt;<span class="hljs-name">h2</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;header_2&quot;</span>&gt;</span>Клиенты о нас:<span class="hljs-tag">&lt;/<span class="hljs-name">h2</span>&gt;</span><br>                    <span class="hljs-tag">&lt;<span class="hljs-name">ul</span>&gt;</span><br>                        <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;#tab_content_1&quot;</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">span</span>&gt;</span>АО <span class="hljs-symbol">&amp;laquo;</span>АЛВИСТ<span class="hljs-symbol">&amp;raquo;</span><span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span><br>                        <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;#tab_content_2&quot;</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">span</span>&gt;</span>Студия моды <span class="hljs-symbol">&amp;laquo;</span>Талия<span class="hljs-symbol">&amp;raquo;</span><span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span><br>                        <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;#tab_content_3&quot;</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">span</span>&gt;</span><span class="hljs-symbol">&amp;laquo;</span>Дизайн-Сити<span class="hljs-symbol">&amp;raquo;</span><span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span><br>                        <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;#tab_content_4&quot;</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">span</span>&gt;</span><span class="hljs-symbol">&amp;laquo;</span>Концерн Европа<span class="hljs-symbol">&amp;raquo;</span><span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span><br>                    <span class="hljs-tag">&lt;/<span class="hljs-name">ul</span>&gt;</span><br>                    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;tab_content_1&quot;</span>&gt;</span><br>                        <span class="hljs-tag">&lt;<span class="hljs-name">h2</span>&gt;</span>Акционерное Общество <span class="hljs-tag">&lt;<span class="hljs-name">b</span>&gt;</span><span class="hljs-symbol">&amp;laquo;</span>АЛВИСТ<span class="hljs-symbol">&amp;raquo;</span><span class="hljs-tag">&lt;/<span class="hljs-name">b</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">h2</span>&gt;</span><br>                        <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;client&quot;</span>&gt;</span><br>                            <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Благодарим коллектив <span class="hljs-tag">&lt;<span class="hljs-name">b</span>&gt;</span>ООО <span class="hljs-symbol">&amp;laquo;</span>Мастер-Ф<span class="hljs-symbol">&amp;raquo;</span><span class="hljs-tag">&lt;/<span class="hljs-name">b</span>&gt;</span> в лице дирректора <span class="hljs-tag">&lt;<span class="hljs-name">b</span>&gt;</span>Филиппова Игоря Анатольевича<span class="hljs-tag">&lt;/<span class="hljs-name">b</span>&gt;</span> за высокую организацию и проведение ремонтно-строительных и отделочных работ, долгосрочное сотрудничество с нашим предприятием.<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>                        <br>                            <span class="hljs-tag">&lt;<span class="hljs-name">br</span>/&gt;</span><br>                            <span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">style</span>=<span class="hljs-string">&quot;text-align: right&quot;</span>&gt;</span>Генеральный директор <span class="hljs-tag">&lt;<span class="hljs-name">b</span>&gt;</span>В.А. Александров<span class="hljs-tag">&lt;/<span class="hljs-name">b</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br>                        <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br>                    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br>                    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;tab_content_2&quot;</span>&gt;</span><br>                        <span class="hljs-tag">&lt;<span class="hljs-name">h2</span>&gt;</span>Студия моды <span class="hljs-tag">&lt;<span class="hljs-name">b</span>&gt;</span><span class="hljs-symbol">&amp;laquo;</span>Талия<span class="hljs-symbol">&amp;raquo;</span><span class="hljs-tag">&lt;/<span class="hljs-name">b</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">h2</span>&gt;</span><br>                        <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;client&quot;</span>&gt;</span><br>                            <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Выражаем благодарность коллективу <span class="hljs-tag">&lt;<span class="hljs-name">b</span>&gt;</span>ООО <span class="hljs-symbol">&amp;laquo;</span>Мастер-Ф<span class="hljs-symbol">&amp;raquo;</span><span class="hljs-tag">&lt;/<span class="hljs-name">b</span>&gt;</span> за отличную работу, высокое качество и соблюдение сроков по ремонтно-строительным и отделочным работам в салонах нашего города.<span class="hljs-tag">&lt;<span class="hljs-name">br</span>/&gt;</span>Пять лет сотрудничества - хорошее доказательство наших отношений как партнеров.<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br>                            <span class="hljs-tag">&lt;<span class="hljs-name">br</span>/&gt;</span><br>                            <span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">style</span>=<span class="hljs-string">&quot;text-align: right&quot;</span>&gt;</span>Генеральный директор <span class="hljs-tag">&lt;<span class="hljs-name">b</span>&gt;</span>Н.Н. Халипская<span class="hljs-tag">&lt;/<span class="hljs-name">b</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br>                        <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br>                    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br>                    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;tab_content_3&quot;</span>&gt;</span><br>                        <span class="hljs-tag">&lt;<span class="hljs-name">h2</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">b</span>&gt;</span><span class="hljs-symbol">&amp;laquo;</span>Дизайн-Сити<span class="hljs-symbol">&amp;raquo;</span><span class="hljs-tag">&lt;/<span class="hljs-name">b</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">h2</span>&gt;</span><br>                        <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;client&quot;</span>&gt;</span><br>                            <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Фирма <span class="hljs-symbol">&amp;laquo;</span>Дизайн Сити<span class="hljs-symbol">&amp;raquo;</span> благодарит работников отделочной фирмы <span class="hljs-tag">&lt;<span class="hljs-name">b</span>&gt;</span>ООО <span class="hljs-symbol">&amp;laquo;</span>Мастер-Ф<span class="hljs-symbol">&amp;raquo;</span><span class="hljs-tag">&lt;/<span class="hljs-name">b</span>&gt;</span>. Ваше мастерство, слаженность работы мастеров и грамотное руководство значительно упрощают нам процессы, связанные с ремонтом наших магазинов и офисов. Наше сотрудничество длится почти 3 года, и за это время не было ни одного повода усомниться, что следующий ремонт мы доверим Вам.<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br>                            <span class="hljs-tag">&lt;<span class="hljs-name">br</span>/&gt;</span><br>                            <span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">style</span>=<span class="hljs-string">&quot;text-align: right&quot;</span>&gt;</span>С уважением, Генеральный директор <span class="hljs-tag">&lt;<span class="hljs-name">b</span>&gt;</span>А.О. Горюнов<span class="hljs-tag">&lt;/<span class="hljs-name">b</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br>                        <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br>                    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br>                    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;tab_content_4&quot;</span>&gt;</span><br>                        <span class="hljs-tag">&lt;<span class="hljs-name">h2</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">b</span>&gt;</span><span class="hljs-symbol">&amp;laquo;</span>Концерн Европа<span class="hljs-symbol">&amp;raquo;</span><span class="hljs-tag">&lt;/<span class="hljs-name">b</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">h2</span>&gt;</span><br>                        <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;client&quot;</span>&gt;</span><br>                            <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>От имени руководства <span class="hljs-tag">&lt;<span class="hljs-name">b</span>&gt;</span>ООО <span class="hljs-symbol">&amp;laquo;</span>Концерн Европа<span class="hljs-symbol">&amp;raquo;</span><span class="hljs-tag">&lt;/<span class="hljs-name">b</span>&gt;</span> выражаю Вам и всему коллективу <span class="hljs-tag">&lt;<span class="hljs-name">b</span>&gt;</span>ООО <span class="hljs-symbol">&amp;laquo;</span>Мастер-Ф<span class="hljs-symbol">&amp;raquo;</span><span class="hljs-tag">&lt;/<span class="hljs-name">b</span>&gt;</span> благодарность за высокий уровень проведения и безукоризненное соблюдение сроков сдачи отделочных работ на объектах нашего предприятия.<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br>                            <span class="hljs-tag">&lt;<span class="hljs-name">br</span>/&gt;</span><br>                            <span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">style</span>=<span class="hljs-string">&quot;text-align: right&quot;</span>&gt;</span>Финансовый директор <span class="hljs-tag">&lt;<span class="hljs-name">b</span>&gt;</span>А.В Петраков<span class="hljs-tag">&lt;/<span class="hljs-name">b</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br>                        <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br>                    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br>                <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br>                <span class="hljs-tag">&lt;<span class="hljs-name">h2</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;header_2&quot;</span>&gt;</span>Примеры наших работ:<span class="hljs-tag">&lt;/<span class="hljs-name">h2</span>&gt;</span><br>                <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;portfolio&quot;</span>&gt;</span><br>                    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;images&quot;</span>&gt;</span><br>                        <span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;images/1.jpg&quot;</span> <span class="hljs-attr">title</span>=<span class="hljs-string">&quot;Натяжные потолки любой сложности&quot;</span>/&gt;</span><br>                        <span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;images/2.jpg&quot;</span> <span class="hljs-attr">style</span>=<span class="hljs-string">&quot;display:none&quot;</span> <span class="hljs-attr">title</span>=<span class="hljs-string">&quot;Дизайн света&quot;</span> /&gt;</span><br>                        <span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;images/3.jpg&quot;</span> <span class="hljs-attr">style</span>=<span class="hljs-string">&quot;display:none&quot;</span> <span class="hljs-attr">title</span>=<span class="hljs-string">&quot;Качественная укладка плитки и монтаж сантехники&quot;</span> /&gt;</span><br>                        <span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;images/4.jpg&quot;</span> <span class="hljs-attr">style</span>=<span class="hljs-string">&quot;display:none&quot;</span> <span class="hljs-attr">title</span>=<span class="hljs-string">&quot;Укладка паркета&quot;</span>/&gt;</span><br>                        <span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;images/5.jpg&quot;</span> <span class="hljs-attr">style</span>=<span class="hljs-string">&quot;display:none&quot;</span> <span class="hljs-attr">title</span>=<span class="hljs-string">&quot;Дизайн помещений&quot;</span>/&gt;</span><br>                        <span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;images/6.jpg&quot;</span> <span class="hljs-attr">style</span>=<span class="hljs-string">&quot;display:none&quot;</span> <span class="hljs-attr">title</span>=<span class="hljs-string">&quot;Работа со сложными конструкциями&quot;</span>/&gt;</span><br>                        <span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;images/7.jpg&quot;</span> <span class="hljs-attr">style</span>=<span class="hljs-string">&quot;display:none&quot;</span> <span class="hljs-attr">title</span>=<span class="hljs-string">&quot;Работа со сложными конструкциями&quot;</span>/&gt;</span><br>                        <span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;images/8.jpg&quot;</span> <span class="hljs-attr">style</span>=<span class="hljs-string">&quot;display:none&quot;</span> <span class="hljs-attr">title</span>=<span class="hljs-string">&quot;Натяжные потолки&quot;</span>/&gt;</span><br>                        <span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;images/9.jpg&quot;</span> <span class="hljs-attr">style</span>=<span class="hljs-string">&quot;display:none&quot;</span> <span class="hljs-attr">title</span>=<span class="hljs-string">&quot;Установка дверей&quot;</span>/&gt;</span><br>                    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br>                <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br>                <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;footer&quot;</span>&gt;</span><br>                    <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Звоните нам! <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;phone&quot;</span>&gt;</span>+7 916 733 7450<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br><br>                    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;copyright&quot;</span>&gt;</span>© <span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="language-javascript"><span class="hljs-variable language_">document</span>.<span class="hljs-title function_">write</span>(<span class="hljs-keyword">new</span> <span class="hljs-title class_">Date</span>().<span class="hljs-title function_">getFullYear</span>())</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span> Мастер-Ф<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br>                <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br>			<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br>		<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br>		<br>		<span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="language-javascript"></span><br><span class="language-javascript">			$(<span class="hljs-variable language_">document</span>).<span class="hljs-title function_">ready</span>(<span class="hljs-keyword">function</span>(<span class="hljs-params"></span>)&#123;</span><br><span class="language-javascript">                $(<span class="hljs-string">&#x27;#images&#x27;</span>).<span class="hljs-title function_">nivoSlider</span>();</span><br><span class="language-javascript"></span><br><span class="language-javascript">                $(<span class="hljs-string">&#x27;#clients&#x27;</span>).<span class="hljs-title function_">tabs</span>();</span><br><span class="language-javascript">			&#125;);</span><br><span class="language-javascript">		</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br>	<span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span><br></code></pre></td></tr></table></figure>
+
+</details>
+
+<p>我吓了一跳，虽然最近确实在学习俄语，但是没有任何印象自己在个人网站上标记过任何的俄语，所以大抵和我没有什么关系。再看 HTTP 标题<code>&lt;title&gt;Мастер-Ф ремонт и строительные работы&lt;/title&gt;</code>，着实被俄国人的取名惊吓了一下 —— Master F。颇为文艺呵。再往后面看，才知道原来是个俄罗斯的装修公司网站。可网站对应的主机名叫做 <code>example.com</code>，而且放在 GitHub 的服务器上？ 有意思。于是我花了一些时间把网站复原了出来。</p>
+<p>首先是根据 html 里的 src 和 href 等等，顺藤摸瓜，我恢复出了整个网站的模样。</p>
+<img src="website.png" alt="网站首页的模样" style="filter: brightness(0.88);" title="网站首页的模样">
+
+<p>看到这些照片，突然感觉有些触动。关于2011年，我已经不记得发生过什么事情了。但是家里的老式数码相机里依然存着家人和我在2011年时候的样子，存着那一年的种种景色和图景。我觉得完全和网站里这些照片的光彩是类似的。我未去过俄罗斯，但是这样的稍微有些暗淡的室内光打在墙壁上，外面寒冷至极，屋内暖而安心的感觉，是让我感到熟悉的。的确让人有一种家的感觉。或者说这样的温馨安全的感觉让我觉得有一种怀旧感。思绪渐渐又远去了……</p>
+<figure class="post-image-group">
+  <img src="1.jpg" alt="Master-F 网站中的室内装修照片">
+  <img src="2.jpg" alt="Master-F 网站中的室内装修照片">
+  <img src="3.jpg" alt="Master-F 网站中的俄罗斯住宅室内照片">
+
+  <figcaption>让人一看就有俄罗斯家庭的感觉</figcaption>
+</figure>
+
+<p>我在瑞典和挪威呆过一小段时间，虽然去的时候是夏天，看不到任何的冰川或是积雪，但是看到当地人居住的房屋，尤其是林雪平市的房屋让我印象极深，我常常会想象从屋里往外看是什么样子的感觉。我想大概和这几张照片差不多舒适吧！</p>
+<p>这几张照片给我带来的舒适感来自这样的场景想象：外面积雪皑皑，飞雪停了有一段时间了，天气依然阴沉沉的。家里的暖气叫人感觉完全与户外远远隔开了，但是你好像离外面又不是很远，因为窗外就是雪景，打开窗户还是会倒灌进来一阵寒风。家门口几棵叫不上名字的高树，凌凌地站在那里，黑漆漆的。这时候在想些什么呢？或许是 codeforces，或许是和哥们打游戏，或许是学校里的某个姑娘……无忧无虑，小镇就这么大，装不下任何的焦虑和忧愁。就青年时期的生活来说，在生活意义上与大都市隔绝也没有什么不好的。每天上学的时候有朋友、心仪的女孩值得期待，放学之后还有爸妈做的饭菜值得期待。晚上睡觉的时候，梦都是甜的。</p>
+<p>但是这个网站怎么能叫 <code>example.com</code> 呢？根据<a target="_blank" rel="noopener" href="https://www.iana.org/whois?q=example.com"> IANA 记载</a>，自 1992年01月01日 开始<code>example.com</code> 就已经存在；而至少从 1999年6月 开始， <code>example.com</code>就已经是<a target="_blank" rel="noopener" href="https://www.rfc-editor.org/rfc/rfc2606.html">保留域名</a>了。这个网站从一开始就无法通过 <code>example.com</code> 访问到，到底是哪个笨蛋前辈程序员在 GitHub 上忘记修改了 CNAME 呢（楽）。</p>
+<p>我尝试发送这样一段 HTTP 请求</p>
+<figure class="highlight http"><table><tr><td class="code"><pre><code class="hljs http"><span class="hljs-keyword">GET</span> <span class="hljs-string">/CNAME</span> <span class="hljs-meta">HTTP/1.1</span><br><span class="hljs-attribute">Host</span><span class="hljs-punctuation">: </span>example.com<br></code></pre></td></tr></table></figure>
+<p>然后得到</p>
+<figure class="highlight http"><table><tr><td class="code"><pre><code class="hljs http"><span class="hljs-meta">HTTP/1.1</span> <span class="hljs-number">200</span> OK<br><span class="hljs-attribute">Content-Length</span><span class="hljs-punctuation">: </span>12<br><span class="hljs-attribute">Last-Modified</span><span class="hljs-punctuation">: </span>Thu, 24 Feb 2011 15:30:37 GMT<br><br><span class="language-maxima"><span class="hljs-built_in">example</span>.com</span><br></code></pre></td></tr></table></figure>
+
+<p>这到底是一家什么公司，它现在还在吗？公司的负责人是谁，现在怎么样？网站的制作者是谁，到底是哪个人放到 GitHub 上的？这些问题让我起了极大的兴趣。遇见即是缘分，遇到互联网上的坟不刨等于浪费。于是， GPT 启动！</p>
+<h2 id="公司其司-负责人其人"><a href="#公司其司-负责人其人" class="headerlink" title="公司其司 &amp; 负责人其人"></a>公司其司 &amp; 负责人其人</h2><p>网页标题下面写着：</p>
+<img src="website_head.png" alt="网页标题" style="filter: brightness(0.88);">
+
+<blockquote>
+<p>Мастер-Ф (Master - F)<br>Строительные и отделочные работы (建筑与装修工程)<br>г. Тверь (特维尔市，г. 是俄语 город 的缩写)</p>
+</blockquote>
+<p>我们从这里得到了公司的服务范围、地址和名称。</p>
+<p>然后网页上面有个 Клиенты о нас (顾客如何评价我们)，第一个评价就是</p>
+<blockquote>
+<p>Благодарим коллектив ООО «Мастер-Ф» в лице дирректора Филиппова Игоря Анатольевича за высокую организацию и проведение ремонтно-строительных и отделочных работ, долгосрочное сотрудничество с нашим предприятием. (АО «АЛВИСТ» Генеральный директор В.А. Александров)</p>
+<p>我们感谢 ООО «Мастер-Ф»（Master-F有限责任公司） 全体员工，特别是公司负责人 Филиппова Игоря Анатольевича，感谢贵方对维修、建筑及装修工程所进行的高水平组织与实施，以及长期以来与本企业的合作。(“ALVIST”股份公司 维克托尔·阿列克谢耶维奇·亚历山德罗夫)</p>
+</blockquote>
+<img src="clients_on_us.png" alt="顾客如何评价我们" style="filter: brightness(0.88);">
+
+
+<blockquote>
+<p><em>注: дирректора应为директора，可能是当时网站制作者的笔误。Александров 其人的信息在<a target="_blank" rel="noopener" href="https://base.garant.ru/16308704/">特维尔市 2004 年城市日庆典上市长感谢信</a>里有所印证。</em></p>
+</blockquote>
+<p>директор 是 director 的意思，在俄语公司的语境里通常就是公司的负责人。网页原文写的是 <code>в лице директора Филиппова Игоря Анатольевича</code>，所以至少可以确定，2011 年时 <em>Филиппов Игорь Анатольевич</em>（<em>Igor Anatolyevich Filippov</em>）是这家公司对外的 директор。至于他是不是老板，还得继续看工商登记。</p>
+<p>我们去<a target="_blank" rel="noopener" href="https://egrul.nalog.ru/index.html">俄罗斯联邦税务局</a>探索一番</p>
+<img src="ru_tax_office.png" alt="俄罗斯税务局页面截图" style="filter: brightness(0.88);">
+
+<p>第一个搜索结果就匹配了 Тверская область (特维尔州)，公司名字也叫Мастер-Ф，不过负责人的名字叫 <em>Филиппов Андрей Анатольевич</em>，英文转写为 <em>Andrey Anatolyevich Filippov</em>. 好家伙，开办的地点和公司名称一样，两人的姓和父称都一样，只是名字不同，傻瓜才会相信两人没有关系。</p>
+<iframe
+  src="ul-1026900550951-20260904055045.pdf"
+  width="100%"
+  height="900px"
+  style="border: none;">
+</iframe>
+
+<p>在第 28 项我们看到 <em>Филиппов Игорь Анатольевич</em>，这正是我们要找的人！也就是我们在俄罗斯的税务局里找到了这位先生的登记信息，而且有心者还可以发现 Игорь 和 Андрей 各持公司 50% 的份额，名义价值各 5000 卢布。我想知道，他们现在过得怎么样呢？</p>
+<p>根据这份 PDF 开头的 ОГРН 1026900550951 和 ИНН  6902033541，我们完全可以确定下来这家公司了。GPT 给我分享了一个<a target="_blank" rel="noopener" href="https://companies.rbc.ru/id/1026900550951-ooo-master-f/">网站</a>，告诉我里面显示 Master-F 这家公司平均在册员工数为 1。我没能打开这个网站，但也太幽默了，让我想起斯拉夫超人。</p>
+<p><a target="_blank" rel="noopener" href="https://check.tochka.com/company/1026900550951">Tochka</a> 的企业核查页面同样显示，截至 2026-04-16 公司仍在运营，并被列入俄罗斯中小企业名录中的 Микробизнес（微型企业）；它还给出了 2024 年财务数据：营业收入约 99.3 万卢布、支出 7.1 万卢布、净利润约 92.2 万卢布。</p>
+<p>好吧，总共2个人做股东、1个人工作的公司，2024年还有93%的利润率，至少从2011年开始的企业活到了现在。Bravo… Очень хорошо!</p>
+<h2 id="神秘的程序员老哥"><a href="#神秘的程序员老哥" class="headerlink" title="神秘的程序员老哥"></a>神秘的程序员老哥</h2><p>所以在 Thu, 24 Feb 2011 15:30:37 GMT，到底是谁上线了一个域名是 <code>example.com</code> 的俄罗斯装修公司网站呢？</p>
+<p>首先还是给 <code>index.html</code> 做个最朴素的文件指纹。我们恢复出的页面刚好是 8453 字节：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash">$ <span class="hljs-built_in">wc</span> -c index.html<br>8453<br><br>$ <span class="hljs-built_in">sha1sum</span> index.html<br>5ac10f13b520539af55c625237cf6735ed021f6c  index.html<br></code></pre></td></tr></table></figure>
+
+<p>我把这个 SHA-1 丢进 <a target="_blank" rel="noopener" href="https://archive.softwareheritage.org/">Software Heritage</a> 的已知内容查询里，居然真的显示 Found。也就是说，这 8453 个字节以前确实被 Software Heritage 收进过档案。</p>
+<img src="software_heritage.png" alt="Software Heritage" style="filter: brightness(0.88);">
+
+<p>Software Heritage 还给出了这份内容的其它摘要：</p>
+<figure class="highlight text"><table><tr><td class="code"><pre><code class="hljs text">swh:1:cnt:0618c46a9481425c493ce33a63e7d347f7c57060<br>length: 8453<br>sha1_git: 0618c46a9481425c493ce33a63e7d347f7c57060<br>sha1:     5ac10f13b520539af55c625237cf6735ed021f6c<br>sha256:   9c7a7921bccd42d1d6435125e50cd6ecdd49756cb00ae196ec03c5f7ac154199<br></code></pre></td></tr></table></figure>
+
+<p>而且这份页面是我在 <code>nc</code> GitHub 的服务器时，根据 <code>Host: example.com</code> 拿到的；GitHub Pages <a target="_blank" rel="noopener" href="https://github.blog/news-insights/github-pages">从 2008 年</a>就已经开始提供服务。所以至少可以判断，这份网页曾经被配置成一个 GitHub Pages 站点。至于原仓库到底在哪里，还得继续找。这时候前面的 HTTP Header 又派上用场了：</p>
+<figure class="highlight http"><table><tr><td class="code"><pre><code class="hljs http"><span class="hljs-attribute">Last-Modified</span><span class="hljs-punctuation">: </span>Thu, 24 Feb 2011 15:30:37 GMT<br></code></pre></td></tr></table></figure>
+
+<p>既然已经知道这是 GitHub Pages，又知道网页最后修改的时间精确到了秒，那就去翻 GitHub 当年的活动记录。我从 <a target="_blank" rel="noopener" href="https://www.gharchive.org/">GH Archive</a> —— 一个保存 GitHub 公共事件的数据库 —— 把 2011 年 2 月 24 日 14:00 到 16:59 UTC 这几个小时的数据下载下来。GitHub 到 <a target="_blank" rel="noopener" href="https://github.blog/news-insights/product-news/new-github-pages-domain-github-io/">2013 年</a>才正式把 Pages 的默认域名从 <code>.github.com</code> 改成 <code>.github.io</code>，所以我优先筛名字像 <code>*.github.com</code> 的用户 Pages 仓库，以及带 <code>gh-pages</code> 分支的项目仓库。翻到 15 点这一小时，让人眼前一亮：</p>
+<figure class="highlight text"><table><tr><td class="code"><pre><code class="hljs text">2011-02-24T15:05:05Z  CreateEvent<br>master-f/master-f.github.com<br><br>2011-02-24T15:05:43Z  CreateEvent<br>repository: master-f/master-f.github.com<br>branch:     master<br>actor:      buger<br></code></pre></td></tr></table></figure>
+
+<p>好你个 buger 啊，<a target="_blank" rel="noopener" href="https://github.com/master-f/master-f.github.com">这个仓库今天居然还活着</a>。让 Git 负责告诉我们仓库里面十五年前究竟发生了什么吧！</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash">$ git <span class="hljs-built_in">clone</span> https://github.com/master-f/master-f.github.com.git<br>$ <span class="hljs-built_in">cd</span> master-f.github.com<br>$ git <span class="hljs-built_in">log</span> --reverse --<span class="hljs-built_in">date</span>=iso --pretty=format:<span class="hljs-string">&#x27;%ad | %an | %s&#x27;</span><br><br>2010-12-30 01:18:38 +0300 | Leonid Bugaev | First revision<br>2011-02-24 15:56:28 +0300 | Leonid Bugaev | New design<br>2011-02-24 16:34:45 +0300 | Leonid Bugaev | Pre-release<br>2011-02-24 16:49:15 +0300 | Leonid Bugaev | Release, fixed some bugs<br>2011-02-24 16:55:30 +0300 | Leonid Bugaev | Spell Fixes<br>2011-02-24 17:30:39 +0300 | Leonid Bugaev | Added CNAME<br>2011-02-24 18:30:20 +0300 | Leonid Bugaev | CNAME <span class="hljs-built_in">test</span><br></code></pre></td></tr></table></figure>
+
+<p>Leonid Bugaev \^_^&#x2F;  他的 GitHub 用户名正是 GH Archive 里看到的 <a target="_blank" rel="noopener" href="https://github.com/buger"><code>buger</code></a>。</p>
+<p>算了一遍 <code>sha1sum</code>，一切都对的上。到这里，网站是谁提交到 GitHub 上的就可以确定了。可<code>example.com</code> 到底是怎么回事？直接看 git log：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash">$ git <span class="hljs-built_in">log</span> -p --follow -- CNAME<br></code></pre></td></tr></table></figure>
+
+<p>第一次添加 <code>CNAME</code> 是下午 17:30：</p>
+<figure class="highlight diff"><table><tr><td class="code"><pre><code class="hljs diff">commit 779ff59cc9ac38c1da44d31f41f070439ec61fb5<br>Author: Leonid Bugaev<br>Date:   Thu Feb 24 17:30:39 2011 +0300<br><br>    Added CNAME<br><br><span class="hljs-addition">+masterff.ru</span><br></code></pre></td></tr></table></figure>
+
+<p>所以 Leonid 老哥其实一开始写对了，域名是 <code>masterff.ru</code>。然后恰好一个小时以后：</p>
+<figure class="highlight diff"><table><tr><td class="code"><pre><code class="hljs diff">commit cd066f2f29aa99cd37b8c56c774a11c1e2af3a72<br>Author: Leonid Bugaev<br>Date:   Thu Feb 24 18:30:20 2011 +0300<br><br>    CNAME test<br><br><span class="hljs-deletion">-masterff.ru</span><br><span class="hljs-addition">+example.com</span><br></code></pre></td></tr></table></figure>
+
+<p>老哥亲手把正确的域名 <code>masterff.ru</code> 改成了 <code>example.com</code>，commit message 甚至就叫 <strong>CNAME test</strong>。然后这个测试值在仓库里一躺就是十五年。</p>
+<p>更妙的是时间。最后一个 commit 是 <code>2011-02-24 18:30:20 +0300</code>，换算成 GMT 正好是：</p>
+<figure class="highlight text"><table><tr><td class="code"><pre><code class="hljs text">2011-02-24 15:30:20 GMT<br></code></pre></td></tr></table></figure>
+
+<p>而我最开始收到的 HTTP Header 是：</p>
+<figure class="highlight http"><table><tr><td class="code"><pre><code class="hljs http"><span class="hljs-attribute">Last-Modified</span><span class="hljs-punctuation">: </span>Thu, 24 Feb 2011 15:30:37 GMT<br></code></pre></td></tr></table></figure>
+
+<p>差了 17 秒。</p>
+<h2 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h2><p>人生多有奇缘妙机啊。2001 年 Master-F 在特维尔成立，后来登记资料里 Игорь 和 Андрей 两位 Филиппов 先生各持一半股份——如果我们的猜测没错，他们大概还是兄弟。Leonid 的 Git 历史从 2010 年末已经出现这个网站的 <code>First revision</code>，到了 2011 年 2 月 24 日，他又在 GitHub 上留下了那个 <code>CNAME test</code>。岁月流转，到了 2026 年，Master-F 依然在营业，Leonid 成为了 Go 圈子里小有名气的人，而我写计算机网络作业，借助大语言模型，成为了看到这一切的人。</p>
+<p>2001年、2011年，那依然是互联网的黄金年代。2026 年，大语言模型技术突飞猛进。千禧年初的俄罗斯，第一个一百年奋斗目标达成后的中国。事实就是没人能够知道未来是什么样子。不过，噢，我已经20岁了啊……</p>
+
+      </article>
+
+      <div class="post-footer-nav">
+        <a href="/writing/">← Back to Writing</a>
+      </div>
+    </main>
+
+    <script>
+      document.querySelectorAll('.post-content img').forEach((img) => {
+        const captionText = img.getAttribute('title');
+        img.setAttribute('title', captionText || 'Open full-size image');
+        img.addEventListener('click', () => {
+          window.open(img.currentSrc || img.src, '_blank', 'noopener,noreferrer');
+        });
+
+        if (!captionText) return;
+
+        const figure = document.createElement('figure');
+        figure.className = 'post-image';
+        const caption = document.createElement('figcaption');
+        caption.textContent = captionText;
+
+        const parent = img.parentElement;
+        const isStandaloneParagraph = parent && parent.tagName === 'P' &&
+          Array.from(parent.childNodes).every((node) =>
+            node === img || (node.nodeType === Node.TEXT_NODE && !node.textContent.trim())
+          );
+
+        if (isStandaloneParagraph) {
+          parent.parentNode.insertBefore(figure, parent);
+          figure.appendChild(img);
+          figure.appendChild(caption);
+          parent.remove();
+        } else if (parent && parent.tagName === 'P') {
+          if (img.previousSibling && img.previousSibling.nodeName === 'BR') {
+            img.previousSibling.remove();
+          }
+          parent.insertAdjacentElement('afterend', figure);
+          figure.appendChild(img);
+          figure.appendChild(caption);
+        } else if (parent) {
+          parent.insertBefore(figure, img);
+          figure.appendChild(img);
+          figure.appendChild(caption);
+        }
+      });
+
+      document.querySelectorAll('.post-content figure.highlight').forEach((block) => {
+        const language = Array.from(block.classList).find((name) => name !== 'highlight');
+        if (!language) return;
+
+        const label = document.createElement('div');
+        label.className = 'code-language';
+        label.textContent = language.toLowerCase();
+        block.insertBefore(label, block.firstChild);
+      });
+    </script>
+    <footer class="bg-black text-gray-400 py-4">
+  <div class="container mx-auto text-center">
+    <p>© 2026 Luo Jiaheng</p>
+  </div>
+</footer>
+
+  </body>
+</html>

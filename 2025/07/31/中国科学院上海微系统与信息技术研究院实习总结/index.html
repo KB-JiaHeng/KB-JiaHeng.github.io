@@ -19,7 +19,7 @@
 
     
   <meta name="generator" content="Hexo 7.3.0"></head>
-  <body class="bg-black">
+  <body class="bg-black post-body">
     <header class="site-header font-dos">
   <div class="site-header-inner">
     <a href="/" class="site-title">JiaHeng&#39;s Blog</a>
@@ -154,6 +154,16 @@
           figure.appendChild(img);
           figure.appendChild(caption);
         }
+      });
+
+      document.querySelectorAll('.post-content figure.highlight').forEach((block) => {
+        const language = Array.from(block.classList).find((name) => name !== 'highlight');
+        if (!language) return;
+
+        const label = document.createElement('div');
+        label.className = 'code-language';
+        label.textContent = language.toLowerCase();
+        block.insertBefore(label, block.firstChild);
       });
     </script>
     <footer class="bg-black text-gray-400 py-4">
