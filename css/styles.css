@@ -660,6 +660,7 @@ a.honor-title:hover {
   width: 100%;
   margin: 0;
   overflow: visible;
+  table-layout: fixed;
   border-collapse: collapse;
 }
 .post-content figure.highlight th,
@@ -680,19 +681,20 @@ a.honor-title:hover {
   overflow-x: auto;
   background: transparent;
   scrollbar-width: thin;
-  scrollbar-color: var(--jh-line) #050505;
+  scrollbar-color: rgba(170,170,170,.35) transparent;
 }
 .post-content figure.highlight pre::-webkit-scrollbar {
-  height: 4px;
+  height: 5px;
 }
 .post-content figure.highlight pre::-webkit-scrollbar-track {
-  background: #050505;
+  background: transparent;
 }
 .post-content figure.highlight pre::-webkit-scrollbar-thumb {
-  background: var(--jh-line);
+  background: rgba(170,170,170,.25);
+  border-radius: 999px;
 }
 .post-content figure.highlight pre::-webkit-scrollbar-thumb:hover {
-  background: var(--jh-green);
+  background: rgba(170,170,170,.5);
 }
 .post-content figure.highlight pre code.hljs,
 .post-content figure.highlight .hljs {

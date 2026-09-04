@@ -118,7 +118,7 @@
 <blockquote>
 <p><em>注: дирректора应为директора，可能是当时网站制作者的笔误。Александров 其人的信息在<a target="_blank" rel="noopener" href="https://base.garant.ru/16308704/">特维尔市 2004 年城市日庆典上市长感谢信</a>里有所印证。</em></p>
 </blockquote>
-<p>директор 是 director 的意思，在俄语公司的语境里通常就是公司的负责人。网页原文写的是 <code>в лице директора Филиппова Игоря Анатольевича</code>，所以至少可以确定，2011 年时 <em>Филиппов Игорь Анатольевич</em>（<em>Igor Anatolyevich Filippov</em>）是这家公司对外的 директор。至于他是不是老板，还得继续看工商登记。</p>
+<p>директор 是 director 的意思，俄语公司语境里的通常就是公司的法定&#x2F;行政负责人的意思。据此可以猜测这是一家规模不大的公司，公司的老板可能就是 <em>Филиппов Игорь Анатольевич</em> 先生，转写为英文就是 <em>Igor Anatolyevich Filippov</em>.</p>
 <p>我们去<a target="_blank" rel="noopener" href="https://egrul.nalog.ru/index.html">俄罗斯联邦税务局</a>探索一番</p>
 <img src="ru_tax_office.png" alt="俄罗斯税务局页面截图" style="filter: brightness(0.88);">
 
@@ -130,7 +130,7 @@
   style="border: none;">
 </iframe>
 
-<p>在第 28 项我们看到 <em>Филиппов Игорь Анатольевич</em>，这正是我们要找的人！也就是我们在俄罗斯的税务局里找到了这位先生的登记信息，而且有心者还可以发现 Игорь 和 Андрей 各持公司 50% 的份额，名义价值各 5000 卢布。我想知道，他们现在过得怎么样呢？</p>
+<p>在第 28 项我们看到 <em>Филиппов Игорь Анатольевич</em>，这正是我们要找的人！也就是我们在俄罗斯的税务局里找到了这位先生的登记信息，而且有心者还可以发现 Игорь 和 Андрей 各自出资了 5000 卢布创建这家公司。我想知道，他们现在过得怎么样呢？</p>
 <p>根据这份 PDF 开头的 ОГРН 1026900550951 和 ИНН  6902033541，我们完全可以确定下来这家公司了。GPT 给我分享了一个<a target="_blank" rel="noopener" href="https://companies.rbc.ru/id/1026900550951-ooo-master-f/">网站</a>，告诉我里面显示 Master-F 这家公司平均在册员工数为 1。我没能打开这个网站，但也太幽默了，让我想起斯拉夫超人。</p>
 <p><a target="_blank" rel="noopener" href="https://check.tochka.com/company/1026900550951">Tochka</a> 的企业核查页面同样显示，截至 2026-04-16 公司仍在运营，并被列入俄罗斯中小企业名录中的 Микробизнес（微型企业）；它还给出了 2024 年财务数据：营业收入约 99.3 万卢布、支出 7.1 万卢布、净利润约 92.2 万卢布。</p>
 <p>好吧，总共2个人做股东、1个人工作的公司，2024年还有93%的利润率，至少从2011年开始的企业活到了现在。Bravo… Очень хорошо!</p>
@@ -144,10 +144,10 @@
 <p>Software Heritage 还给出了这份内容的其它摘要：</p>
 <figure class="highlight text"><table><tr><td class="code"><pre><code class="hljs text">swh:1:cnt:0618c46a9481425c493ce33a63e7d347f7c57060<br>length: 8453<br>sha1_git: 0618c46a9481425c493ce33a63e7d347f7c57060<br>sha1:     5ac10f13b520539af55c625237cf6735ed021f6c<br>sha256:   9c7a7921bccd42d1d6435125e50cd6ecdd49756cb00ae196ec03c5f7ac154199<br></code></pre></td></tr></table></figure>
 
-<p>而且这份页面是我在 <code>nc</code> GitHub 的服务器时，根据 <code>Host: example.com</code> 拿到的；GitHub Pages <a target="_blank" rel="noopener" href="https://github.blog/news-insights/github-pages">从 2008 年</a>就已经开始提供服务。所以至少可以判断，这份网页曾经被配置成一个 GitHub Pages 站点。至于原仓库到底在哪里，还得继续找。这时候前面的 HTTP Header 又派上用场了：</p>
+<p>而且既然我们是在 <code>nc</code> GitHub 的服务器的时候获取的这个网站，而 GitHub Pages <a target="_blank" rel="noopener" href="https://github.blog/news-insights/github-pages">从 2008 年</a>就开始提供服务，那么这个网页一开始一定在 GitHub 上 deploy 过。这时候前面的 HTTP Header 又派上用场了：</p>
 <figure class="highlight http"><table><tr><td class="code"><pre><code class="hljs http"><span class="hljs-attribute">Last-Modified</span><span class="hljs-punctuation">: </span>Thu, 24 Feb 2011 15:30:37 GMT<br></code></pre></td></tr></table></figure>
 
-<p>既然已经知道这是 GitHub Pages，又知道网页最后修改的时间精确到了秒，那就去翻 GitHub 当年的活动记录。我从 <a target="_blank" rel="noopener" href="https://www.gharchive.org/">GH Archive</a> —— 一个保存 GitHub 公共事件的数据库 —— 把 2011 年 2 月 24 日 14:00 到 16:59 UTC 这几个小时的数据下载下来。GitHub 到 <a target="_blank" rel="noopener" href="https://github.blog/news-insights/product-news/new-github-pages-domain-github-io/">2013 年</a>才正式把 Pages 的默认域名从 <code>.github.com</code> 改成 <code>.github.io</code>，所以我优先筛名字像 <code>*.github.com</code> 的用户 Pages 仓库，以及带 <code>gh-pages</code> 分支的项目仓库。翻到 15 点这一小时，让人眼前一亮：</p>
+<p>既然已经知道这是 GitHub Pages，又知道网页最后修改的时间精确到了秒，那就去翻 GitHub 当年的活动记录。我从 <a target="_blank" rel="noopener" href="https://www.gharchive.org/">GH Archive</a> —— 一个保存 GitHub 的公共事件的数据库 —— 把 2011 年 2 月 24 日 14:00 到 16:59 UTC 这几个小时的数据下载下来。GitHub 从 <a target="_blank" rel="noopener" href="https://github.blog/news-insights/product-news/new-github-pages-domain-github-io/">2013年</a>开始才正式把 GitHub Pages 的域名从 <code>.github.com</code> 改成 <code>.github.io</code>。所以筛 GitHub Pages 味道比较重的仓库一定是名字里带 <code>.github.com</code> 的，或是在 <code>gh-pages</code> 分支。翻到 15 点这一小时，让人眼前一亮：</p>
 <figure class="highlight text"><table><tr><td class="code"><pre><code class="hljs text">2011-02-24T15:05:05Z  CreateEvent<br>master-f/master-f.github.com<br><br>2011-02-24T15:05:43Z  CreateEvent<br>repository: master-f/master-f.github.com<br>branch:     master<br>actor:      buger<br></code></pre></td></tr></table></figure>
 
 <p>好你个 buger 啊，<a target="_blank" rel="noopener" href="https://github.com/master-f/master-f.github.com">这个仓库今天居然还活着</a>。让 Git 负责告诉我们仓库里面十五年前究竟发生了什么吧！</p>
@@ -171,7 +171,7 @@
 <figure class="highlight http"><table><tr><td class="code"><pre><code class="hljs http"><span class="hljs-attribute">Last-Modified</span><span class="hljs-punctuation">: </span>Thu, 24 Feb 2011 15:30:37 GMT<br></code></pre></td></tr></table></figure>
 
 <p>差了 17 秒。</p>
-<h2 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h2><p>人生多有奇缘妙机啊。2001 年 Master-F 在特维尔成立，后来登记资料里 Игорь 和 Андрей 两位 Филиппов 先生各持一半股份——如果我们的猜测没错，他们大概还是兄弟。Leonid 的 Git 历史从 2010 年末已经出现这个网站的 <code>First revision</code>，到了 2011 年 2 月 24 日，他又在 GitHub 上留下了那个 <code>CNAME test</code>。岁月流转，到了 2026 年，Master-F 依然在营业，Leonid 成为了 Go 圈子里小有名气的人，而我写计算机网络作业，借助大语言模型，成为了看到这一切的人。</p>
+<h2 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h2><p>人生多有奇缘妙机啊。2001年 Филиппов 兄弟（如果没有猜错的话）在特维尔市联合创办了 Master-F，在 2011 年请了 Leonid 帮忙写网站。Leonid 写完网站之后留下了一个 <code>CNAME test</code>。岁月流转，到了 2026 年， Филиппов 兄弟的公司依然屹立，Leonid 成为了 Go 圈子里小有名气的人，而我写计算机网络作业，借助大语言模型，成为了看到这一切的人。</p>
 <p>2001年、2011年，那依然是互联网的黄金年代。2026 年，大语言模型技术突飞猛进。千禧年初的俄罗斯，第一个一百年奋斗目标达成后的中国。事实就是没人能够知道未来是什么样子。不过，噢，我已经20岁了啊……</p>
 
       </article>
