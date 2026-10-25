@@ -305,6 +305,14 @@ a {
   margin: 0 0 1rem;
   line-height: 1.85;
 }
+.about-summary-copy a {
+  color: var(--jh-green);
+  text-decoration: underline;
+  text-underline-offset: .18em;
+}
+.about-summary-copy a:hover {
+  color: #fff;
+}
 .about-more-link, .back-link {
   display: inline-block;
   margin-top: .5rem;
