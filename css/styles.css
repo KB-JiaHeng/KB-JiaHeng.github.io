@@ -131,7 +131,7 @@ a {
   border-top: 2px dashed var(--jh-line);
 }
 .recent-writing {
-  padding: 2.5rem 0 5rem;
+  padding: 2.5rem 0 4.25rem;
   border-top: 1px dashed var(--jh-line);
 }
 .section-heading {
@@ -237,6 +237,104 @@ a {
   color: var(--jh-green);
   text-transform: uppercase;
   letter-spacing: .04em;
+}
+.things-made {
+  padding: 2.75rem 0 6rem;
+  border-top: 1px dashed var(--jh-line);
+}
+.things-list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  -moz-column-gap: 3rem;
+       column-gap: 3rem;
+  border-top: 1px solid rgba(20,83,45,.55);
+}
+.thing-project {
+  padding: 1.45rem .2rem 1.7rem;
+  border-bottom: 1px solid rgba(20,83,45,.55);
+}
+.thing-project > h3 {
+  margin: 0 0 1rem;
+  color: #eeeeee;
+  font-size: 1.3rem;
+  font-weight: 600;
+  line-height: 1.4;
+}
+.thing-project-body {
+  min-width: 0;
+}
+.thing-project-preview {
+  display: block;
+  width: min(100%, 24rem);
+  min-width: 0;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  border: 1px solid rgba(20,83,45,.7);
+  background: #080808;
+}
+.thing-project-preview img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  filter: brightness(.86);
+  transition: filter 180ms ease;
+}
+.thing-project-preview:hover img, .thing-project-preview:focus-visible img {
+  filter: brightness(1);
+}
+.thing-project-preview:focus-visible {
+  outline: 2px solid var(--jh-green);
+  outline-offset: 3px;
+}
+.thing-project-copy {
+  max-width: 24rem;
+  min-width: 0;
+  margin-top: .8rem;
+}
+.thing-project-summary {
+  color: #aaaaaa;
+  font-size: 1rem;
+  line-height: 1.7;
+}
+.thing-project-summary p {
+  margin: 0;
+}
+.thing-project-summary p + p {
+  margin-top: .6rem;
+}
+.thing-project-summary a {
+  color: var(--jh-green);
+  text-underline-offset: .18em;
+}
+.thing-project-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .5rem 1.25rem;
+  margin-top: .8rem;
+  font-family: DOSFont, monospace;
+  font-size: .95rem;
+}
+.thing-project-links a {
+  color: var(--jh-green);
+  text-decoration: none;
+  font-weight: 400;
+}
+.thing-project-links a span {
+  color: #777;
+  font-family: Arial, sans-serif;
+}
+.thing-project-links a:hover, .thing-project-links a:hover span {
+  color: #fff;
+}
+.thing-project-links a:focus-visible {
+  outline: 1px dashed var(--jh-green);
+  outline-offset: .3rem;
+}
+.thing-project-text-only .thing-project-copy {
+  max-width: 46rem;
+  margin-top: 0;
 }
 .about-page {
   padding-top: 3rem;
@@ -771,6 +869,21 @@ a.honor-title:hover {
   .writing-category {
     grid-column: 2;
   }
+  .things-made {
+    padding-bottom: 4.5rem;
+  }
+  .things-list {
+    grid-template-columns: minmax(0,1fr);
+  }
+  .thing-project {
+    padding: 1.35rem .15rem 1.6rem;
+  }
+  .thing-project > h3 {
+    margin-bottom: .85rem;
+  }
+  .thing-project-body {
+    width: 88%;
+  }
   .about-overview {
     grid-template-columns: 1fr;
     gap: 2rem;
@@ -802,6 +915,11 @@ a.honor-title:hover {
   .post-content {
     font-size: 1.04rem;
     line-height: 1.8;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .thing-project-preview img {
+    transition: none;
   }
 }
 @property --tw-border-style {
