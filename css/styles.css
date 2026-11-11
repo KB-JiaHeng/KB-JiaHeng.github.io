@@ -12,6 +12,9 @@
 .hidden {
   display: none;
 }
+.resize {
+  resize: both;
+}
 .border {
   border-style: var(--tw-border-style);
   border-width: 1px;
@@ -33,9 +36,20 @@
   --jh-green-bright: #00c000;
   --jh-muted: #aaaaaa;
   --jh-line: #14532d;
+  --jh-reading-sans: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans CJK SC", "Microsoft YaHei", sans-serif;
+  --jh-terminal-copy: "Noto Sans Mono CJK SC", "Sarasa Mono SC", "Microsoft YaHei UI", monospace;
 }
 body {
   color: var(--jh-muted);
+}
+.site-footer {
+  font-family: DOSFont, monospace;
+  font-size: .86rem;
+  letter-spacing: .025em;
+}
+.footer-copyright-mark {
+  font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+  letter-spacing: 0;
 }
 a {
   transition: color 150ms ease;
@@ -182,7 +196,7 @@ a {
   background: transparent;
   color: var(--jh-muted);
   cursor: pointer;
-  font: inherit;
+  font: 400 .95rem/1.45 DOSFont, monospace;
 }
 .writing-filters button:hover {
   color: #fff;
@@ -256,9 +270,8 @@ a {
 .thing-project > h3 {
   margin: 0 0 1rem;
   color: #eeeeee;
-  font-size: 1.3rem;
-  font-weight: 600;
-  line-height: 1.4;
+  font: 400 clamp(1.14rem, 2.1vw, 1.3rem)/1.5 DOSFont, monospace;
+  letter-spacing: .015em;
 }
 .thing-project-body {
   min-width: 0;
@@ -294,9 +307,12 @@ a {
   margin-top: .8rem;
 }
 .thing-project-summary {
-  color: #aaaaaa;
+  color: #bbbbbb;
+  font-family: var(--jh-terminal-copy);
   font-size: 1rem;
-  line-height: 1.7;
+  line-height: 1.75;
+  border-left: 1px solid var(--jh-line);
+  padding-left: .85rem;
 }
 .thing-project-summary p {
   margin: 0;
@@ -396,7 +412,7 @@ a {
 }
 .about-summary-copy {
   color: #e7e7e7;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans CJK SC", "Microsoft YaHei", sans-serif;
+  font-family: var(--jh-reading-sans);
   font-size: 1.12rem;
 }
 .about-summary-copy p {
