@@ -1,0 +1,42 @@
+<h1 id="YOLO-Hero-—-Artwork-Sources"><a href="#YOLO-Hero-—-Artwork-Sources" class="headerlink" title="YOLO Hero — Artwork Sources"></a>YOLO Hero — Artwork Sources</h1><p>These four WebP images are the <strong>runtime image layers</strong> used by the homepage’s DOS-style torn-screen animation. The original high-resolution downloads are <strong>not required</strong> for playback or for <code>hexo generate</code>.</p>
+<h2 id="Source-artworks"><a href="#Source-artworks" class="headerlink" title="Source artworks"></a>Source artworks</h2><table>
+<thead>
+<tr>
+<th>WebP file</th>
+<th>Source artwork</th>
+<th>Original source</th>
+<th>Rights</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>stoic-scholars.webp</code></td>
+<td>Raphael, <em>The School of Athens</em> (1509–1511), a cropped section showing the youth writing on his knee and the nearby leaning figure.</td>
+<td><a href="https://commons.wikimedia.org/wiki/File:The_School_of_Athens_by_Raffaello_Sanzio_da_Urbino,_Vatican.jpg">Wikimedia Commons: The School of Athens by Raffaello Sanzio da Urbino, Vatican</a></td>
+<td>Original Renaissance painting: public domain; consult the Commons file page for the particular photograph’s reuse information.</td>
+</tr>
+<tr>
+<td><code>stoic-fresco.webp</code></td>
+<td>Raphael, <em>The School of Athens</em>, broader architectural and figure background from the same reproduction.</td>
+<td><a href="https://commons.wikimedia.org/wiki/File:The_School_of_Athens_by_Raffaello_Sanzio_da_Urbino,_Vatican.jpg">Wikimedia Commons: same file</a></td>
+<td>Same as above.</td>
+</tr>
+<tr>
+<td><code>buddha-thangka.webp</code></td>
+<td><em>Thangka with Buddha Seated on Lotus Pedestal</em>, Tibet, 19th century. The Metropolitan Museum of Art, accession <strong>1971.25.1</strong>, object <strong>38054</strong>.</td>
+<td><a href="https://www.metmuseum.org/art/collection/search/38054">The Met collection record</a> · <a href="https://images.metmuseum.org/CRDImages/as/original/LC-1971_25_1_housing--003_crop.jpg">The Met image</a></td>
+<td>The Met Open Access; marked public domain &#x2F; CC0.</td>
+</tr>
+<tr>
+<td><code>buddha-gilded.webp</code></td>
+<td><em>Buddha Seated in Meditation</em>, Sri Lanka (western regions), 16th century. The Metropolitan Museum of Art, accession <strong>2010.67</strong>, object <strong>72301</strong>.</td>
+<td><a href="https://www.metmuseum.org/art/collection/search/72301">The Met collection record</a> · <a href="https://images.metmuseum.org/CRDImages/as/original/DP219472.jpg">The Met image</a></td>
+<td>The Met Open Access; marked public domain &#x2F; CC0.</td>
+</tr>
+</tbody></table>
+<h2 id="How-these-images-are-used"><a href="#How-these-images-are-used" class="headerlink" title="How these images are used"></a>How these images are used</h2><ul>
+<li><strong>Stoic variant:</strong> <code>stoic-fresco.webp</code> is the moving fresco background; <code>stoic-scholars.webp</code> is a separately cropped, transparent-edged detail with the original figure’s painted anatomy preserved. The text <strong>ARETÊ</strong> is a website overlay, <em>not</em> an inscription from Raphael’s fresco. The depicted youth should not be presented as Marcus Aurelius.</li>
+<li><strong>Buddhist variant:</strong> <code>buddha-thangka.webp</code> is the moving painting background; <code>buddha-gilded.webp</code> is a cut-out photograph of a gilded sculpture. They come from <strong>different artworks and traditions</strong>, intentionally juxtaposed. <strong>Om!</strong> is a website overlay.</li>
+<li><strong>Masks, animation and color treatments:</strong> Applied at runtime using <code>themes/hexploit/source/css/yolo-corruption.css</code>, <code>themes/hexploit/source/css/yolo-gallery.css</code>, and <code>themes/hexploit/source/js/yolo-corruption.js</code>. Neither the tear shape nor the text is baked into the WebPs.</li>
+</ul>
+<p>The WebPs are derived assets (cropped&#x2F;resized&#x2F;recolored; the scholars layer has a torn-paper alpha edge, and the statue layer has a removed photo background). Retain this README when copying the images or publishing the website to preserve source attribution.</p>
+<p>For future recropping, redownload the higher-resolution originals from the linked institutions. No image in this folder depends on retaining a separate <code>artwork-sources/</code> directory.</p>

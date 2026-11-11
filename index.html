@@ -6,6 +6,8 @@
     <title>JiaHeng&#39;s Blog</title>
     <link rel="stylesheet" href="/css/styles.css" />
     <link rel="stylesheet" href="/css/tailwind.css" />
+    <link rel="stylesheet" href="/css/yolo-corruption.css" />
+    <link rel="stylesheet" href="/css/yolo-gallery.css" />
     <script>
   document.addEventListener("DOMContentLoaded", () => {
     const menuToggle = document.getElementById("menu-toggle");
@@ -44,6 +46,56 @@
         <h1>You Only Live Once</h1>
         <div class="home-rule"></div>
         <p>Let Eve Bite that Apple!</p>
+        <div class="yolo-rift" aria-hidden="true">
+          <div class="yolo-rift__edge"></div>
+          <div class="yolo-rift__window">
+            <div class="yolo-rift__world">
+              <div class="yolo-rift__currents"></div>
+              <svg class="yolo-rift__veins" viewBox="0 0 1200 520" preserveAspectRatio="xMidYMid slice" focusable="false" aria-hidden="true">
+                <defs>
+                  <pattern id="yolo-veins" width="230" height="240" patternUnits="userSpaceOnUse" patternTransform="rotate(-11)">
+                    <g fill="none" stroke="#b8ed38" stroke-linecap="square">
+                      <path d="M-50 10 C 70 -35,40 95,150 40 S 275 80,310 12" stroke-width="10"/>
+                      <path d="M-50 30 C 66 -10,45 121,155 63 S 265 108,310 41" stroke-width="4"/>
+                      <path d="M-55 68 C 85 40,25 174,170 114 S 285 169,310 90" stroke-width="9"/>
+                      <path d="M-55 93 C 83 64,30 195,174 140 S 290 185,310 119" stroke-width="3"/>
+                      <path d="M-50 170 C 45 111,65 239,158 197 S 280 228,310 161" stroke-width="11"/>
+                      <path d="M-50 193 C 48 145,69 259,164 222 S 270 246,310 187" stroke-width="4"/>
+                    </g>
+                    <g fill="none" stroke="#044f79" stroke-width="5" opacity=".65">
+                      <path d="M-50 51 Q 90 6 155 89 T 310 67"/>
+                      <path d="M-50 151 Q 80 86 160 166 T 310 148"/>
+                    </g>
+                  </pattern>
+                </defs>
+                <rect width="1200" height="520" fill="url(#yolo-veins)"/>
+              </svg>
+              <div class="yolo-rift__halo"></div>
+              <div class="yolo-rift__print"><span>RE:BIRTH</span></div>
+              <div class="yolo-rift__grain"></div>
+
+              
+              <div class="yolo-rift__scene yolo-rift__scene--stoic">
+                <div class="yolo-rift__fresco-backdrop"></div>
+                <div class="yolo-rift__stoic-disc"></div>
+                <img class="yolo-rift__scholars" src="/images/yolo/stoic-scholars.webp" alt="" draggable="false" decoding="async" />
+                <div class="yolo-rift__stoic-inscription">ARETÊ</div>
+                <div class="yolo-rift__fresco-grain"></div>
+              </div>
+
+              <div class="yolo-rift__scene yolo-rift__scene--buddha">
+                <div class="yolo-rift__thangka-backdrop"></div>
+                <div class="yolo-rift__mandala"></div>
+                <img class="yolo-rift__buddha" src="/images/yolo/buddha-gilded.webp" alt="" draggable="false" decoding="async" />
+                <div class="yolo-rift__om">Om!</div>
+                <div class="yolo-rift__thangka-grain"></div>
+              </div>
+            </div>
+          </div>
+          <div class="yolo-rift__tracking"></div>
+          <div class="yolo-rift__fault">[!] <span class="yolo-rift__fault-message">SEGMENTATION FAULT</span><span class="yolo-rift__cursor">_</span></div>
+          <div class="yolo-rift__afterimage"></div>
+        </div>
       </section>
 
       <section class="recent-writing">
@@ -136,5 +188,6 @@
   </div>
 </footer>
 
+    <script src="/js/yolo-corruption.js" defer></script>
   </body>
 </html>

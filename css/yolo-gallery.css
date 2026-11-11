@@ -1,0 +1,279 @@
+/* Two public-domain art collages. Original DOS surface, title and tear
+ * geometry live in yolo-corruption.css; this file owns ONLY the new underprints. */
+
+.yolo-rift__scene {
+  display: none;
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.home-intro[data-rift="stoic"] .yolo-rift__scene--stoic,
+.home-intro[data-rift="buddha"] .yolo-rift__scene--buddha {
+  display: block;
+}
+
+.home-intro:is([data-rift="stoic"],[data-rift="buddha"]) .yolo-rift__currents,
+.home-intro:is([data-rift="stoic"],[data-rift="buddha"]) .yolo-rift__veins,
+.home-intro:is([data-rift="stoic"],[data-rift="buddha"]) .yolo-rift__halo,
+.home-intro:is([data-rift="stoic"],[data-rift="buddha"]) .yolo-rift__print,
+.home-intro:is([data-rift="stoic"],[data-rift="buddha"]) .yolo-rift__grain {
+  display: none;
+}
+
+.home-intro[data-rift="stoic"] .yolo-rift__world { background: #283759; }
+.home-intro[data-rift="buddha"] .yolo-rift__world { background: #1b4956; }
+.home-intro[data-rift="stoic"] .yolo-rift__edge {
+  background: repeating-linear-gradient(110deg,#efe5cf 0 7px,#92776e 7px 11px,#ebbb83 11px 15px);
+}
+.home-intro[data-rift="buddha"] .yolo-rift__edge {
+  background: repeating-linear-gradient(113deg,#eedda8 0 5px,#d79c76 5px 9px,#543e89 9px 13px);
+}
+.home-intro[data-rift="stoic"] .yolo-rift__fault {
+  color: #f5c3a2;
+  text-shadow: 1px 0 #7f95e0;
+  bottom: 4%;
+}
+.home-intro[data-rift="buddha"] .yolo-rift__fault {
+  color: #ead69c;
+  text-shadow: 1px 0 #c84a9b;
+  bottom: 4%;
+}
+
+/* Two independent, desynchronized raster layers clipped to the video aperture. */
+.home-intro[data-rift="stoic"] .yolo-rift__window::after,
+.home-intro[data-rift="buddha"] .yolo-rift__window::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+.home-intro[data-rift="stoic"] .yolo-rift__window::after {
+  background:
+    repeating-linear-gradient(90deg, transparent 0 63px, #ede2bf2a 63px 64px),
+    repeating-linear-gradient(0deg, transparent 0 15px, #0c0f2a26 15px 16px);
+  mix-blend-mode: multiply;
+  opacity: .48;
+}
+.home-intro[data-rift="buddha"] .yolo-rift__window::after {
+  background: repeating-radial-gradient(ellipse at 49% 50%,
+    #f5ddab36 0 2px, transparent 2px 22px);
+  mix-blend-mode: screen;
+  opacity: .28;
+}
+.home-intro.is-rifting[data-rift="buddha"] .yolo-rift__window::after {
+  animation: yolo-bloom-retrace 3.1s steps(1, end) infinite;
+}
+@keyframes yolo-bloom-retrace {
+  0%, 42% { transform: translate(0, 0); opacity: .19; }
+  43%, 53% { transform: translate(-8px, 8px); opacity: .34; }
+  54%, 82% { transform: translate(8px, 0); opacity: .16; }
+  83%, 100% { transform: translate(0, -8px); opacity: .28; }
+}
+
+/* The background and scholar cutout are real Raphael image pixels;
+   torn-poster irregularities come from the transparent WebP alpha. */
+.yolo-rift__fresco-backdrop,
+.yolo-rift__thangka-backdrop {
+  position: absolute;
+  inset: -8%;
+  background-size: cover;
+  background-position: center 51%;
+}
+
+.yolo-rift__fresco-backdrop {
+  background-image: linear-gradient(115deg, #31417453, #441c4077), url("/images/yolo/stoic-fresco.webp");
+  filter: saturate(1.18) contrast(1.15);
+}
+
+.yolo-rift__stoic-disc {
+  position: absolute;
+  right: 7%;
+  top: -26%;
+  height: 140%;
+  aspect-ratio: 1;
+  border: clamp(12px,3vw,30px) double #c8a16f99;
+  background: repeating-radial-gradient(circle, #e5c7982e 0 12px, #542e572a 13px 25px, #14225399 27px 41px);
+  border-radius: 50%;
+  mix-blend-mode: screen;
+  opacity: .7;
+}
+
+.yolo-rift__scholars {
+  position: absolute;
+  left: 12%;
+  top: 0%;
+  height: 100%;
+  width: auto;
+  max-width: none;
+  -o-object-fit: contain;
+     object-fit: contain;
+  filter: sepia(.10) saturate(1.3) contrast(1.08) drop-shadow(13px 10px 0 #211e33a9);
+  image-rendering: auto;
+}
+
+/* One word becomes a classical inscription on the empty right-hand wall.
+   It is deliberately separate from the scholar's figure on the left. */
+.yolo-rift__stoic-inscription {
+  position: absolute;
+  top: 44%;
+  right: 11%;
+  width: -moz-max-content;
+  width: max-content;
+  transform: translateY(-50%);
+  color: #f0deb9;
+  font: 400 clamp(3rem, 6.1vw, 6.4rem)/1 "Palatino Linotype", "Book Antiqua", Georgia, serif;
+  letter-spacing: .135em;
+  white-space: nowrap;
+  text-shadow: 1px 2px 0 #36283c, -1px -1px 0 #fff0ca66;
+}
+
+/* A single engraved baseline, rather than the old double-line nameplate. */
+.yolo-rift__stoic-inscription::after {
+  content: "";
+  position: absolute;
+  left: .04em;
+  right: .13em;
+  bottom: -.21em;
+  height: 1px;
+  background: linear-gradient(90deg, #e4cba380, #e4cba3dd 63%, transparent);
+}
+
+.yolo-rift__fresco-grain,
+.yolo-rift__thangka-grain {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background:
+    repeating-linear-gradient(0deg, transparent 0 3px, #03030b45 3px 5px),
+    repeating-linear-gradient(90deg, #0000 0 52px, #f2e6b01b 53px 54px);
+  mix-blend-mode: multiply;
+}
+
+/* The Buddha is independently extracted from a CC0 Met sculpture;
+   the illustrated scenery is an independently cropped CC0 Tibetan thangka. */
+.yolo-rift__thangka-backdrop {
+  background-image:
+    linear-gradient(105deg, #0a165b74 0%, #082b2c33 48%, #48133f62 100%),
+    url("/images/yolo/buddha-thangka.webp");
+  filter: saturate(1.22) contrast(1.09);
+  background-position: center 48%;
+}
+
+.yolo-rift__mandala {
+  position: absolute;
+  height: 129%;
+  aspect-ratio: 1;
+  left: 10%;
+  top: -17%;
+  border-radius: 50%;
+  border: 7px double #f7cb7c;
+  box-shadow:
+    0 0 0 13px #4b2557a9,
+    0 0 0 18px #c88c51d1,
+    0 0 0 29px #0c66738a,
+    inset 0 0 0 7px #cb84b3a6;
+  background: repeating-conic-gradient(from 0deg, #fad58755 0deg 3deg, #14235b55 5deg 18deg, #c52e7450 20deg 25deg, #133f6660 27deg 35deg);
+  mix-blend-mode: screen;
+  opacity: .85;
+}
+
+.yolo-rift__buddha {
+  position: absolute;
+  left: 15%;
+  top: 5%;
+  height: 105%;
+  width: auto;
+  max-width: none;
+  -o-object-fit: contain;
+     object-fit: contain;
+  filter: saturate(1.2) contrast(1.11) drop-shadow(8px 7px 0 #26113ba8);
+  image-rendering: auto;
+}
+
+.yolo-rift__om {
+  position: absolute;
+  right: 7%;
+  top: 37%;
+  color: #ffe4aa;
+  font: italic 700 clamp(3.6rem, 9vw, 8.5rem)/1 Georgia, serif;
+  text-shadow: 4px 4px #882c75, -2px -1px #2e6c78;
+  transform: rotate(-8deg);
+}
+
+/* Three independently stepped clocks create a stalled-video-buffer feeling. */
+.home-intro.is-rifting[data-rift="stoic"] .yolo-rift__fresco-backdrop {
+  animation: yolo-stoic-ground 4.5s steps(1,end) infinite;
+}
+.home-intro.is-rifting[data-rift="stoic"] .yolo-rift__scholars {
+  animation: yolo-stoic-scholar 3.6s steps(1,end) infinite;
+}
+.home-intro.is-rifting[data-rift="stoic"] .yolo-rift__stoic-inscription {
+  animation: yolo-stoic-word 2.7s steps(1,end) infinite;
+}
+
+.home-intro.is-rifting[data-rift="buddha"] .yolo-rift__thangka-backdrop {
+  animation: yolo-buddha-ground 5.4s steps(1,end) infinite;
+}
+.home-intro.is-rifting[data-rift="buddha"] .yolo-rift__buddha {
+  animation: yolo-buddha-form 4.9s steps(1,end) infinite;
+}
+.home-intro.is-rifting[data-rift="buddha"] .yolo-rift__mandala {
+  animation: yolo-mandala 7.6s steps(8,end) infinite;
+}
+.home-intro.is-rifting[data-rift="buddha"] .yolo-rift__om {
+  animation: yolo-om 2.8s steps(1,end) infinite;
+}
+
+@keyframes yolo-stoic-ground {
+  0%, 28% { transform: translate(0,0) scale(1); }
+  29%, 51% { transform: translate(12px,-6px) scale(1.018); }
+  52%, 63% { transform: translate(-9px,3px) scale(1.018); }
+  64%, 100% { transform: translate(4px,4px) scale(1); }
+}
+@keyframes yolo-stoic-scholar {
+  0%, 32% { transform: translate(0,0); }
+  33%, 39% { transform: translate(-11px,6px); }
+  40%, 74% { transform: translate(7px,-3px); }
+  75%, 100% { transform: translate(-2px,2px); }
+}
+@keyframes yolo-stoic-word {
+  0%, 53% { transform: translateY(-50%) translateX(0); }
+  54%, 61% { transform: translateY(-50%) translateX(10px); }
+  62%, 100% { transform: translateY(-50%) translateX(-4px); }
+}
+@keyframes yolo-buddha-ground {
+  0%, 31% { transform: translate(0,0); }
+  32%, 43% { transform: translate(-11px,6px); }
+  44%, 72% { transform: translate(7px,-8px); }
+  73%, 100% { transform: translate(0,3px); }
+}
+@keyframes yolo-buddha-form {
+  0%, 37% { transform: translate(0,0); }
+  38%, 48% { transform: translate(5px,0); }
+  49%, 78% { transform: translate(-3px,-8px); }
+  79%, 100% { transform: translate(2px,2px); }
+}
+@keyframes yolo-mandala {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(45deg); }
+}
+@keyframes yolo-om {
+  0%, 39%, 75%, 100% { transform: rotate(-8deg) translateX(0); opacity: 1; }
+  40%, 47% { transform: rotate(-8deg) translateX(9px); opacity: .65; }
+  76%, 82% { transform: rotate(-8deg) translateX(-5px); opacity: .9; }
+}
+
+@media (max-width: 700px) {
+  .yolo-rift__scholars { left: -14%; height: 105%; top: 0%; }
+  .yolo-rift__stoic-disc { right: -55%; }
+  .yolo-rift__stoic-inscription { top: 43%; right: 15%; font-size: clamp(1.7rem, 7.7vw, 2.8rem); letter-spacing: .09em; }
+  .yolo-rift__mandala { left: -41%; height: 132%; }
+  .yolo-rift__buddha { left: -18%; top: 4%; height: 116%; }
+  .yolo-rift__om { top: 40%; right: 3%; font-size: clamp(3.4rem, 15vw, 5rem); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .yolo-rift__scene * { animation: none !important; }
+}

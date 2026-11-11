@@ -105,7 +105,7 @@ a {
   padding: 0 1.5rem;
 }
 .home-intro {
-  min-height: 52vh;
+  min-height: 58vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -855,7 +855,7 @@ a.honor-title:hover {
     display: block;
   }
   .home-intro {
-    min-height: 44vh;
+    min-height: 48vh;
     align-items: flex-start;
     text-align: left;
   }
